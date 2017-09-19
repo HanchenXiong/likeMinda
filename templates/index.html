@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>likeMinda</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/embeded-tweets.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="static/js/twitter-widget.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <h1 class="text-center">likeMinds</h1>
+    <h4 class="text-center">find like-minded tweets & people </h4>
+    
+    <div class="well clearfix">
+        <div class="col-md-6 col-md-offset-3">
+        <div class="checkbox pull-right"><input type="checkbox" class="radio" value="1" name="brainstorming-checkbox">Brain Storming</div>
+        <textarea class="form-control"></textarea><br />
+        <button class="btn btn-primary pull-right">Tweet</button>
+      </div>
+    </div>
+    <script>
+	//initially disable the button
+	$("button").prop("disabled", true);
+	
+	//When the textarea value is changed
+	$("textarea").on("input", function() {
+	  if ($(this).val().length > 0) {
+	    $("button").prop("disabled", false);
+	  } else {
+	    $("button").prop("disabled", true);
+	  }
+	});
+    </script>
+    <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 300, "gutter":20 }'>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/ziegfiroyt/status/643519526508888064"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/tribunabi/status/625360348489646080"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/pedestrian/status/741438374968328192"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/tribundergi/status/662992624593338368"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/losev1998/status/740423736113893376"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/astro_reid/status/500638760040529922"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/acikfutbol/status/679268483452895236"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/semttakimi/status/671683576950341632"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/SciencePorn/status/632942683384872963"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/NatGeo/status/733786918668865536"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/inthemoodfortw/status/740880017979265024"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/unblockio/status/420560882456739840"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/tribundergi/status/670224495085551616"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/AstroSamantha/status/605681391871754240"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/tribundergi/status/705356184648335360"></a></blockquote></div>
+      <div class="grid-item"><blockquote class="twitter-tweet"><a href="https://twitter.com/ziegfiroyt/status/41585690970333184"></a></blockquote></div>
+    </div>
+
+    <!-- Peace be upon you / ziegfiroyt -->
+
+  </body>
+</html>
+
