@@ -1,11 +1,39 @@
-//initially disable the button
-$("button").prop("disabled", true);
+var app = angular.module('SemanticSearchApp', []);
 
-//When the textarea value is changed
-$("textarea").on("input", function() {
-  if ($(this).val().length > 0) {
-    $("button").prop("disabled", false);
-  } else {
-    $("button").prop("disabled", true);
-  }
-});
+
+app.controller('SemanticSearchController', ['$scope', '$log', '$http',
+    function($scope, $log, $http, userTextInput) {
+        // Controller variables
+        $scope.userTextInput = userTextInput;
+ 
+        /**
+            this function queries the endpoint /api/search/
+            to get a list of tweets retrieved with the user input
+            gets a json response as a result
+        **/   
+        $scope.searchAndRefresh = function() {
+            // create a dictionary for the requests parameters
+            var url = "http://localhost:2222/api/search";
+
+            // fire the API request
+            $http({
+                method: "GET",
+                url: url,
+                //data: {"sentence": $scope.userTextInput}
+            }).then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                $log.log(response);
+                $scope.tweetIDs = response.data;
+            }, function errorCallback(error) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+                $log.log(error);
+            });
+        }
+
+        $scope.setValue = function(value) {
+            $scope.userTextInput = value;
+        }
+    }
+]);

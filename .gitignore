@@ -1,3 +1,6 @@
 #virtual enviroment
-
 likeMinda-env/
+
+
+#swp files
+*.swp
