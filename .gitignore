@@ -1,6 +1,8 @@
 #virtual enviroment
 likeMinda-env/
 
+#pycache
+__pycache__/
 
 #swp files
 *.swp
