@@ -1,5 +1,5 @@
 # app.py or app/__init__.py
-from flask import Flask
+from flask import Flask, Response, request
 from flask import render_template
 
 app = Flask(__name__)
@@ -21,6 +21,11 @@ app.jinja_options = jinja_options
 @app.route('/')
 def index():
     return render_template("index.html")
+
+
+@app.route('/api/forward', methods=['POST'])
+def forward():
+    return 0   
 
 
 

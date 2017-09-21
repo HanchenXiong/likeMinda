@@ -13,10 +13,13 @@ app.controller('SemanticSearchController', ['$scope', '$log', '$http',
         **/   
 
         $scope.presskey = function (event) {
-            var inp = String.fromCharCode(event.which);
-            if (/[a-zA-Z0-9-_ ]/.test(inp)) {
-                $scope.getExpansions(event);
-            }
+           if ($scope.checkSelected){
+               var inp = String.fromCharCode(event.which);
+               if (/[a-zA-Z0-9-_ ]/.test(inp)) {
+                   $scope.getExpansions(event);
+               } 
+           } else {
+           }
         }
     
         $scope.getExpansions = function(event) {
@@ -33,9 +36,9 @@ app.controller('SemanticSearchController', ['$scope', '$log', '$http',
 
             // fire the API request
             $http({
-                method: "GET",
+                method: "POST",
                 url: url,
-                //data: {"sentence": $scope.userTextInput}
+                data: {"tweet": $scope.userTextInput}
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
