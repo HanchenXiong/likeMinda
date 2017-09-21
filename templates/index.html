@@ -21,10 +21,7 @@
 	  } else {
 	    $("button").prop("disabled", true);
 	  }
-          if ($("[name=brainstorming-checkobx]").prop('checked') == true) {
-	     searchAndRefresh()
-          }
-	});
+       	});
     </script>
   </head>
 
@@ -37,7 +34,7 @@
        <div class="well clearfix">
            <div class="col-md-6 col-md-offset-3">
               <div class="checkbox pull-right"><input type="checkbox" class="radio" value="1" name="brainstorming-checkbox">Brain Storming</div>
-              <textarea class="form-control"></textarea><br />
+              <textarea class="form-control" ng-trim="false" ng-model="userTextInput" ng-keypress="presskey($event)"></textarea><br/>
               <button class="btn btn-primary pull-right" ng-click="searchAndRefresh()">Tweet</button>
           </div>
        </div>
