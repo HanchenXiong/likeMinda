@@ -12,20 +12,21 @@ app.controller('SemanticSearchController', ['$scope', '$log', '$http',
             gets a json response as a result
         **/   
 
+
+        
+        var key4api;
         $scope.presskey = function (event) {
+           window.clearTimeout(key4api);
            if ($scope.checkSelected){
                var inp = String.fromCharCode(event.which);
                if (/[a-zA-Z0-9-_ ]/.test(inp)) {
-                   $scope.getExpansions(event);
+                  key4api = window.setTimeout(function(){$scope.triggerAPI();}, 500);
                } 
            } else {
            }
         }
     
-        $scope.getExpansions = function(event) {
-           $scope.triggerAPI(); 
-        };
-
+       
        $scope.searchAndRefresh = function() {
 	  $scope.triggerAPI();
        }
