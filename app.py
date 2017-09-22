@@ -23,11 +23,5 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/api/forward', methods=['POST'])
-def forward():
-    return 0   
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
