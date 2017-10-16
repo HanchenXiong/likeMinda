@@ -33,6 +33,8 @@ app.controller('SemanticSearchController', ['$scope', '$log', '$http',
  
        $scope.triggerAPI = function() {
             // create a dictionary for the requests parameters
+            var host = window.location.hostname;
+            $log.log(host) 
             var url = "http://localhost:2222/api/search";
 
             // fire the API request
